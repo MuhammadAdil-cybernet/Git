@@ -1,0 +1,336 @@
+/* Reset default browser margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Keeps width calculations predictable */
+}
+
+:root {
+  --primary-color: #4f46e5;
+  --hover-color: #6366f1;
+  --active-color: #312e81;
+  --text-color: #ffffff;
+  --disabled-color: #a1a1aa;
+  --shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+}
+
+/* Background and text color based on color theory
+   Blue = trust and professionalism
+   White = cleanliness and clarity
+   Light gray = calm balance */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f6fa;
+  color: #000000;
+}
+
+/* Navbar container styled with flexbox 
+.navbar {
+  display: flex; /* Align items horizontally */
+/* justify-content: space-between; */
+/* Space between logo and links */
+/* align-items: center;  */
+/* Center vertically */
+/* background-color: #1e3a8a;  */
+/* Deep blue (trustworthy tone) */
+/* padding: 15px 40px; */
+/* Inner spacing */
+/* box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); Soft depth shadow */
+/* } */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(28, 30, 52, 0.519); /* Semi-transparent deep blue */
+  backdrop-filter: blur (5px); /* Adds a frosted glass effect */
+  padding: 15px 40px;
+  position: fixed; /* Keeps navbar at top even while scrolling */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100; /* Ensures navbar stays above hero section */
+}
+
+/* Logo styling */
+.navbar .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Navigation links container */
+.nav-links {
+  display: flex; /* Align links in a row */
+  list-style: none; /* Remove default bullet points */
+  gap: 25px; /* Space between each link */
+}
+
+/* Links styling */
+.nav-links a {
+  text-decoration: none; /* Remove underline */
+  color: white;
+  font-weight: 700;
+  position: relative; /* Required for dropdown positioning */
+  transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #ffd700; /* Golden accent color to grab attention */
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative; /* To position dropdown menu inside */
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Appears right below the parent link */
+  left: 0;
+  background-color: white;
+  border-radius: 6px;
+  min-width: 180px; /* Enough width for content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  opacity: 0; /* Hidden initially */
+  visibility: hidden;
+  transform: translateY(20px); /* Slide down effect */
+  transition: all 0.3s ease; /* Smooth appearance */
+}
+
+/* Dropdown links */
+.dropdown-menu li {
+  list-style: none;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+/* Styling dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 12px 15px;
+  color: #1b376d;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+/* Hover inside dropdown */
+.dropdown-menu a:hover {
+  background-color: #f0f4ff; /* Light blue shade for contrast */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1; /* Make it visible */
+  visibility: visible;
+  transform: translateY(0); /* Smooth slide-in */
+}
+
+/*hero */
+.hero {
+  height: 90vh; /* Full viewport height */
+  background: url("batman-1920x1080.jpg") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+/* Service section container */
+.services {
+  display: flex; /* For potential multiple cards */
+  justify-content: center;
+  align-items: center;
+}
+
+#services-title h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Card container styling */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  width: 300px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.card h3 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+/* Button base style */
+.btn {
+  position: relative; /* Required for pseudo-element layering */
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #000;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden; /* Hides the filling effect overflow */
+  border-radius: 6px;
+  transition: color 0.3s ease; /* Text color changes smoothly */
+  z-index: 1;
+}
+
+/* The pseudo-element that acts like liquid fill */
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0; /* Initially empty */
+  background-color: #000; /* The “liquid” color */
+  z-index: -1; /* Keeps it behind the text */
+  transition: height 0.4s ease; /* Smooth upward fill */
+  border-radius: 6px;
+}
+
+/* Hover effect: liquid fills upward */
+.btn:hover::before {
+  height: 100%; /* Fills entire button height */
+}
+
+/* Text color changes on hover for contrast */
+.btn:hover {
+  color: #fff;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.table .menu-table {
+  border: 1px solid black;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px;
+  max-width: 1000px;
+}
+
+.menu-table th,
+.menu-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.menu-table th {
+  background: #3e2723;
+  color: #fff;
+}
+
+#Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+  margin-top: 60px;
+}
+#Container .Pic img {
+  width: 600px;
+  height: 400px;
+}
+
+.fields {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  gap: 15px; /* gap between fields in column direction  */
+}
+
+.login h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+.login label {
+  font-size: 14px;
+  color: #363333;
+}
+
+.login input {
+  padding: 10px; /* increasing the space inside the field */
+  border: 1px solid #999595;
+  border-radius: 8px;
+  outline: none; /* removes the extra outlines with the field is selected while entering the data in that field. */
+  font-size: 14px;
+  transition: 0.5s; /* slowly appears */
+}
+
+.login input:focus {
+  border-color: #6c63ff;
+  box-shadow: 7px 10px 5px rgba(108, 99, 255, 0.9);
+}
+
+.login button {
+  margin-top: 15px;
+  padding: 12px;
+  background: #6c63ff;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login button:hover {
+  background: #493fd4;
+  color: #000000;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #1b376d;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Git.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <!-- Navbar Container using Flexbox -->
+      <nav class="navbar">
+        <!-- Website Logo -->
+        <div class="logo">LOGO</div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+          <!-- Each li represents a link -->
+          <li><a href="#">Home</a></li>
+          <li><a href="#services-title">Services</a></li>
+          <!-- Dropdown Menu Example -->
+          <!-- <li class="dropdown">
+            <a href="#">Services ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Room Booking</a></li>
+              <li><a href="#">Meal Plans</a></li>
+              <li><a href="#">Laundry</a></li>
+            </ul>
+          </li> -->
+
+          <!-- <li><a href="#">About</a></li> -->
+          <li><a href="#Container">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <p>Experience comfort with elegance</p>
+    </section>
+
+    <!-- Service Card -->
+    <section id="services-title">
+      <h3>Services</h3>
+    </section>
+
+    <section class="services">
+      <div class="card">
+        <h3>Basic</h3>
+        <p>Enjoy our basic services with scenic views and modern comfort.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Normal</h3>
+        <p>Enjoy our basic services with scenic views and modern comfort.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Advance</h3>
+        <p>Enjoy our basic services with scenic views and modern comfort.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Luxury</h3>
+        <p>Enjoy our basic services with scenic views and modern comfort.</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+    </section>
+
+    <!--Table section-->
+    <section class="table">
+      <table class="menu-table">
+        <thead>
+          <tr>
+            <th>Menu Item</th>
+            <th>Price</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Tom and Jerry</td>
+            <td>$3.00</td>
+            <td>Rich and bold, the perfect pick-me-up.</td>
+          </tr>
+          <tr>
+            <td>Ralph Breaks the internet</td>
+            <td>$4.00</td>
+            <td>Smooth and creamy, made with HD graphics</td>
+          </tr>
+          <tr>
+            <td>Batman</td>
+            <td>$4.50</td>
+            <td>Delightful treat for Batman lovers.</td>
+          </tr>
+          <tr>
+            <td>Spider-Man</td>
+            <td>$3.50</td>
+            <td>Experience how Spider-Man saves the world.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!--Contact form-->
+    <section id="Container">
+      <div class="Pic">
+        <img src="contactUs.jpg" alt="contactUs" />
+      </div>
+
+      <div class="fields">
+        <!-- child of container, parent of login -->
+        <div class="login">
+          <!-- child of fields -->
+          <h2>Login Please</h2>
+
+          <label for="Email">Email</label>
+          <input
+            type="text"
+            id="Email"
+            name="Email"
+            placeholder="Enter your email"
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+
+          <button>Login</button>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+    <section>
+      <footer class="footer">
+        <p>© 2025 YourCompany. All rights reserved.</p>
+      </footer>
+    </section>
+  </body>
+</html>
