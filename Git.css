@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(28, 30, 52, 0.519); /* Semi-transparent deep blue */
+  background-color: rgba(8, 10, 22, 0.519); /* Semi-transparent deep blue */
   backdrop-filter: blur (5px); /* Adds a frosted glass effect */
   padding: 15px 40px;
   position: fixed; /* Keeps navbar at top even while scrolling */
@@ -50,6 +50,7 @@ body {
   top: 0;
   left: 0;
   z-index: 100; /* Ensures navbar stays above hero section */
+  transition: 0.4s ease-in-out;
 }
 
 /* Logo styling */
@@ -74,11 +75,13 @@ body {
   font-weight: 700;
   position: relative; /* Required for dropdown positioning */
   transition: color 0.3s ease; /* Smooth hover transition */
+  padding: 15px;
 }
 
 /* Hover effect for links */
 .nav-links a:hover {
-  color: #ffd700; /* Golden accent color to grab attention */
+  color: #ffee00; /* Golden accent color to grab attention */
+  background-color: rgba(13, 13, 16, 0.519); /* Semi-transparent deep blue */
 }
 
 /* Dropdown container */
@@ -134,20 +137,30 @@ body {
 
 /*hero */
 .hero {
-  height: 90vh; /* Full viewport height */
+  height: 100vh; /* Full viewport height */
   background: url("batman-1920x1080.jpg") no-repeat center/cover;
+
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  color: white;
+  color: rgb(255, 255, 255);
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 50px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: CustomFont, sans-serif;
 }
 
 /* Service section container */
@@ -158,10 +171,18 @@ body {
 }
 
 #services-title h3 {
+  color: rgb(0, 0, 0);
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 30px;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: CustomFont, sans-serif;
+  margin: 15px;
 }
 
 /* Card container styling */
@@ -172,8 +193,15 @@ body {
   padding: 30px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 5px;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  margin: 5px;
+  border: 2px solid black;
+}
 /* Heading */
 .card h3 {
   color: #1e3a8a;
@@ -213,7 +241,7 @@ body {
   background-color: #000; /* The “liquid” color */
   z-index: -1; /* Keeps it behind the text */
   transition: height 0.4s ease; /* Smooth upward fill */
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 /* Hover effect: liquid fills upward */
@@ -334,3 +362,94 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
+
+/* ---------------- RESPONSIVE RULES ---------------- */
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .MenuLeft {
+    flex: 0 0 180px;
+  }
+  .main-title {
+    font-size: 24px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* stack sidebar + main */
+  }
+  .MenuLeft {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex: 1 1 100%;
+  }
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  .cards {
+    flex-direction: column; /* stack cards vertically */
+  }
+  .card {
+    flex: 1 1 100%;
+  }
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+    padding: 15px;
+  }
+  .main-title {
+    font-size: 20px;
+  }
+  .card p {
+    font-size: 18px;
+  }
+}
+
+/* form design */
+/*.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #000000;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #520073;
+}
+*/
